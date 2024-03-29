@@ -2,16 +2,18 @@ services:
   mysql:
     image: 'mysql:latest'
     environment:
-      - 'MYSQL_DATABASE=mydatabase'
+      - 'MYSQL_DATABASE=ms-email'
       - 'MYSQL_PASSWORD=secret'
       - 'MYSQL_ROOT_PASSWORD=verysecret'
       - 'MYSQL_USER=myuser'
     ports:
-      - '3306'
+      - '3306:3306'
   rabbitmq:
-    image: 'rabbitmq:latest'
-    environment:
-      - 'RABBITMQ_DEFAULT_PASS=secret'
-      - 'RABBITMQ_DEFAULT_USER=myuser'
+    image: 'rabbitmq:3-management-alpine'
+    container_name: 'rabbitmq'
     ports:
-      - '5672'
+      - '5672:5672'
+      - '15672:15672'
+    volumes:
+      - '~/.docker-conf/rabbitmq/data/:/var/lib/rabbitmq/'
+      - '~/.docker-conf/rabbitmq/log/:/var/log/rabbitmq'
