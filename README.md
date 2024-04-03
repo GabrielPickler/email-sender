@@ -8,3 +8,4 @@ Este microserviço foi desenvolvido para enviar e-mails utilizando RabbitMQ para
 - Docker Compose (geralmente já incluído na instalação do Docker)
 - Spring Boot
 - Amazon SES
+- Gradle
