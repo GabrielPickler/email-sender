@@ -1,4 +1,4 @@
-package com.pickler.emailSender;
+package com.pickler.emailsender;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
